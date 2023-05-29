@@ -1,4 +1,4 @@
-target/
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -11,7 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
-*.xml
+workspace.xml
+vcs.xml
 
 ### Eclipse ###
 .apt_generated

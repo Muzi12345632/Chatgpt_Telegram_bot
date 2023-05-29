@@ -47,7 +47,7 @@ public class Master_bot extends TelegramLongPollingBot {
     public String getBotUsername() {return "chatgpt_bot";}
     @Override
     public String getBotToken() {
-        return "5425935361:AAHo1PZosMVoLpog1OVUEvLVKKb8g54sx4s";
+        return "";
     }
 
     /*public  void SendAnimation(Long who, String file)  {
@@ -79,7 +79,7 @@ public class Master_bot extends TelegramLongPollingBot {
 
         System.out.println(update.getMessage().getAnimation());
 
-        OpenAiService service = new OpenAiService("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");
+        OpenAiService service = new OpenAiService("");
         //var answer = service.createCompletion(completionRequest).getChoices();
         System.out.println("\nCreating completion...");
         CompletionRequest completionRequest = CompletionRequest.builder()

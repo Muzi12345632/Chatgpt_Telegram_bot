@@ -50,21 +50,7 @@ public class Master_bot extends TelegramLongPollingBot {
         return "";
     }
 
-    /*public  void SendAnimation(Long who, String file)  {
-        Properties properties = new Properties();
-        //Update update = new Update();
-        //Long chat_Id = update.getMessage().getChatId();
-        //properties.load(new FileInputStream("local.properties"));
-        SendAnimation sa = SendAnimation.builder()
-                .chatId(who.toString())
-                .animation(new InputFile(file)).build();
 
-        try {
-            execute(sa);                        //Actually sending the message
-        } catch (TelegramApiException e) {
-            throw new RuntimeException(e);      //Any error will be printed here
-        }
-    }*/
 
     @Override
     public void onUpdateReceived(Update update){
@@ -75,7 +61,7 @@ public class Master_bot extends TelegramLongPollingBot {
 
         var text = update.getMessage().getText();
 
-        //AI code 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
+        //AI code
 
         System.out.println(update.getMessage().getAnimation());
 

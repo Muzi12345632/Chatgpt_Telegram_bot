@@ -11,8 +11,71 @@
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
+        <main-class>org.example.Main</main-class>
+        <packaging>jar</packaging>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>myco-sonatype-nexus-snapshots</id>
+            <name>MyCo Sonatype-Nexus Snapshots</name>
+            <url>http://sonatype.myco.com/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.example.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-install</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                    <executions>
+                        <execution>
+                            <phase>deploy</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>sonatype-nexus</id>
+            <url>http://sonatype.myco.com/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </distributionManagement>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson -->
@@ -77,5 +140,8 @@
         </dependency>
 
     </dependencies>
+
+
+
 
 </project>
